@@ -3,12 +3,12 @@
 using namespace std;
 
 bool validRow(vector<vector<char>>& board, int row) {
-    vector<int> vTrack(10, 0);  // Track numbers from 1 to 9
+    vector<int> vTrack(10, 0);
     for (int i = 0; i < 9; i++) {
         if (board[row][i] != '.') {
-            int num = board[row][i] - '0';  // Convert char to int
+            int num = board[row][i] - '0';
             if (vTrack[num] != 0) {
-                return false;  // Duplicate found
+                return false;
             }
             vTrack[num]++;
         }
@@ -17,12 +17,12 @@ bool validRow(vector<vector<char>>& board, int row) {
 }
 
 bool validCol(vector<vector<char>>& board, int col) {
-    vector<int> vTrack(10, 0);  // Track numbers from 1 to 9
+    vector<int> vTrack(10, 0);
     for (int i = 0; i < 9; i++) {
         if (board[i][col] != '.') {
-            int num = board[i][col] - '0';  // Convert char to int
+            int num = board[i][col] - '0';
             if (vTrack[num] != 0) {
-                return false;  // Duplicate found
+                return false;
             }
             vTrack[num]++;
         }
@@ -31,14 +31,14 @@ bool validCol(vector<vector<char>>& board, int col) {
 }
 
 bool validSubGrid(vector<vector<char>>& board, int startRow, int startCol) {
-    vector<int> vTrack(10, 0);  // Track numbers from 1 to 9
+    vector<int> vTrack(10, 0);
     for (int row = 0; row < 3; row++) {
         for (int col = 0; col < 3; col++) {
             char current = board[row + startRow][col + startCol];
             if (current != '.') {
-                int num = current - '0';  // Convert char to int
+                int num = current - '0';
                 if (vTrack[num] != 0) {
-                    return false;  // Duplicate found
+                    return false;
                 }
                 vTrack[num]++;
             }

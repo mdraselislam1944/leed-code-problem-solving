@@ -19,6 +19,7 @@ int main() {
         initial=i+1;
        }
     }
+    return intervalList
     for (int i=0;i<intervalList.size();i++) {
         cout << intervalList[i] << endl;
     }
